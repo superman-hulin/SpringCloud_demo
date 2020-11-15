@@ -1,0 +1,21 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        # 当nacos为集群时，则server-addr的值为nginx的访问地址
+        # 然后在通过Nginx的负载均衡去找nacos集群中的某个节点
+        server-addr: localhost:8848 #配置Nacos地址
+
+# 监控暴露
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+

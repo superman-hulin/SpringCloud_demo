@@ -1,0 +1,14 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: hystrix-payment-service # 该服务的名称 用于在注册中心注册服务时用
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka # 当注册中心是单机版时 则只需要指定单机注册中心的地址
+      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka # 集群版 则该服务需要注册进每个注册中心
